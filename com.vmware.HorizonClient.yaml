@@ -1,7 +1,7 @@
 ---
 app-id: com.vmware.HorizonClient
 runtime: org.gnome.Platform
-runtime-version: '41'
+runtime-version: '42'
 sdk: org.gnome.Sdk
 desktop-file-name-suffix: ' (Flatpak)'
 command: vmware-view

@@ -31,8 +31,8 @@ modules:
     buildsystem: simple
     sources:
       - type: file
-        url: https://download3.vmware.com/software/CART23FQ3_LIN_2209_TARBALL/VMware-Horizon-Client-Linux-2209-8.7.0-20616018.tar.gz
-        sha256: 222b645318cb67484a68810fae1209041462c1c8fb2b3e1a45f219dfba57c374
+        url: https://download3.vmware.com/software/CART23FQ4_LIN_2212.1_TARBALL/VMware-Horizon-Client-Linux-2212.1-8.8.1-21219348.tar.gz
+        sha256: 16bf916e5e57f2b67a32027255256759758cf11512224bb85ae93dd10c6f06a5
         dest-filename: VMware-Horizon-Linux.tar.gz
       - type: file
         path: com.vmware.HorizonClient.appdata.xml

@@ -31,15 +31,15 @@ modules:
     buildsystem: simple
     sources:
       - type: file
-        url: https://download3.vmware.com/software/CART24FQ1_LIN_2303_TARBALL/VMware-Horizon-Client-Linux-2303-8.9.0-21435420.tar.gz
-        sha256: a4dcc6afc0be7641e10e922ccbbab0a10adbf8f2a83e4b5372dfba095091fb78
+        url: https://download3.vmware.com/software/CART24FQ2_LIN_2306_TARBALL/VMware-Horizon-Client-Linux-2306-8.10.0-21964631.tar.gz
+        sha256: 6051f6f1617385b3c211b73ff42dad27e2d22362df6ffd2f3d9f559d0b5743ea
         dest-filename: VMware-Horizon-Linux.tar.gz
       - type: file
         path: com.vmware.HorizonClient.appdata.xml
     build-commands:
       - mkdir MainFiles
       - tar -xf "VMware-Horizon-Linux.tar.gz" -C MainFiles --strip-components 1
-      - cd MainFiles/x64/ && for f in *; do tar -xf "$f" -C /app/ --strip-components 1; done && cd ..
+      - cd MainFiles/x64/ && for f in *; do tar -xf "$f" -C /app/ --strip-components 2; done && cd ..
       - mkdir -p "/app/share/icons/hicolor/64x64/apps/"
       - mv "/app/share/icons/vmware-view.png" "/app/share/icons/hicolor/64x64/apps/com.vmware.HorizonClient.png"
       - mv "/app/share/applications/vmware-view.desktop" "/app/share/applications/com.vmware.HorizonClient.desktop"
@@ -50,7 +50,6 @@ modules:
       - sed -i 's+/usr+/app+' "/app/bin/vmware-url-filter"
       - sed -i 's/\/usr/\/app/' "/app/bin/vmware-view-log-collector"
       - sed -i 's+/usr+/app+' "/app/lib/vmware/view/bin/vmware-view" # Relink the main binary
-#      - sed -i 's+/usr+/app+' "/app/lib/vmware/view/env/env_utils.sh" // TODO: remove, file is no more
       - sed -i 's+/usr+/app+' "/app/lib/vmware/view/dct/vmware-view-log-collector"
       - sed -i 's+/usr+/app+' "/app/lib/vmware/view/dct/configFiles/Client.json"
       - sed -i 's+/usr+/app+' "/app/lib/vmware/view/dct/configFiles/Virtual_Channel/VDPService.json"
